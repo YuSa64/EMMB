@@ -15,10 +15,6 @@ class SimpleOperator(bpy.types.Operator):
     bl_idname = "object.simple_operator"
     bl_label = "Toggle"
 
-    @classmethod
-    def poll(cls, context):
-        return context.active_object is not None
-
     def execute(self, context):
         # toggle the "Emulate 3 Button Mouse" preference
         bpy.context.preferences.inputs.use_mouse_emulate_3_button = not bpy.context.preferences.inputs.use_mouse_emulate_3_button
